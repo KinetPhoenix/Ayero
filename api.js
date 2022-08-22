@@ -10,6 +10,10 @@ function commandUsed(req, res, next) {
 
 const server = restify.createServer();
 server.post('/commands/:user', commandUsed);
+server.get('/', function(req, res, next) {
+    res.send("Hello");
+    next();
+})
 
 server.listen(8080, function() {
   console.log('%s listening at %s', server.name, server.url);
