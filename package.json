@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/rest": "^1.1.0",
     "@types/node": "^18.0.6",
     "discord.js": "^14.2.0",
-    "node-fetch": "^3.2.6"
+    "node-fetch": "^3.2.10",
+    "restify": "^8.6.1"
   }
 }
