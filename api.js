@@ -1,13 +1,15 @@
 const restify = require('restify');
 
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
+function commandUsed(req, res, next) {
+  const user = req.params.user
+    res.send(JSON.stringify({
+        user: user
+    }))
   next();
 }
 
 const server = restify.createServer();
-server.get('/hello/:name', respond);
-server.head('/hello/:name', respond);
+server.post('/commands/:user', commandUsed);
 
 server.listen(8080, function() {
   console.log('%s listening at %s', server.name, server.url);
